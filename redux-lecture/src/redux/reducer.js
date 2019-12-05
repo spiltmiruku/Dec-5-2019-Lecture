@@ -10,3 +10,14 @@ export function loginUser(userObj){
         payload: userObj
     }
 }
+
+export default function reducer(state = initialState, action){
+    const {type, payload} = action;
+    switch(type){
+        case LOGIN_USER:
+            //return Object.assign({}, state, {user: userObj})
+            return {...state, user: payload}
+        default: 
+            return state;
+    }
+}
